@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  checkCertificadoApp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: check-certificado
+    container_name: check-certificado-prod
+    restart: always
+    ports:
+      - "${PORTL}:${PORT}"  # usa la variable PORT definida en .env
+    env_file:
+      - .env
