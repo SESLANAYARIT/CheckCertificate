@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CoursesModule } from './courses/courses.module';
+import { NextCoursesModule } from './next-courses/next-courses.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { CoursesModule } from './courses/courses.module';
       autoLoadEntities: true,
     }),
     CoursesModule,
+    NextCoursesModule,
+    CommonModule,
   ],
   controllers: [],
   providers: [],
