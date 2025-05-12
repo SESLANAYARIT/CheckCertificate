@@ -24,5 +24,6 @@ export class NextCoursesService {
     } catch (error) {
       handleDatabaseError(error);
     }
+    
   }
 }

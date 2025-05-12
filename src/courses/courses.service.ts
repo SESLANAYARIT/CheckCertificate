@@ -9,14 +9,14 @@ export class CoursesService {
     @InjectRepository(Student)
     private readonly studentRepository: Repository<Student>,
   ) {}
-  findOne(id: string) {
+  async findOne(id: string) {
     try {
-      return this.studentRepository.findOneOrFail({
+      return await this.studentRepository.findOneOrFail({
         where: { id },
         relations: ['course'],
       });
     } catch (error) {
-      return new NotFoundException('Reconocimiento no encontrado');
+      throw new NotFoundException('Reconocimiento no encontrado');
     }
 
   }
