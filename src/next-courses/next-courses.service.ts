@@ -17,13 +17,13 @@ export class NextCoursesService {
     const today = new Date();
     try {
       return this.nextCourseRepository.find({
-        where: {date: MoreThan(today) },
+        where: { date: MoreThan(today) },
         take: limit,
         skip: offset,
+        order: { date: 'ASC' },
       });
     } catch (error) {
       handleDatabaseError(error);
     }
-    
   }
 }
