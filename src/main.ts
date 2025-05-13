@@ -12,9 +12,10 @@ async function bootstrap() {
     }),
   );
   app.enableCors({
-    cors: true,
-    origin:"*"
-  }); 
+    origin: 'https://revisarcursos.seslan.gob.mx',
+    methods: ['GET'],
+    credentials: true,
+  });
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
